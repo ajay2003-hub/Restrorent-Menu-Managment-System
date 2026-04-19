@@ -13,7 +13,7 @@ export default function AiModal({ close, setMenu }) {
       setLoading(true);
 
       const res = await axios.get(
-        `http://localhost:8080/api/ai/suggest?query=${query}`
+        `${import.meta.env.VITE_API_URL}/api/ai/suggest?query=${query}`
       );
 
       setMenu(res.data); // 🔥 update menu with AI result

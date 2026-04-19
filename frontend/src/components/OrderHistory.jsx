@@ -5,7 +5,7 @@ export default function OrderHistory() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/orders")
+    axios.get(`${import.meta.env.VITE_API_URL}/api/orders`)
       .then(res => setOrders(res.data))
       .catch(err => console.error(err));
   }, []);

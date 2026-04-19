@@ -24,7 +24,7 @@ export default function Contact() {
         return;
       }
 
-      await axios.post("http://localhost:8080/api/contact", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, {
         message: message,
       });
 

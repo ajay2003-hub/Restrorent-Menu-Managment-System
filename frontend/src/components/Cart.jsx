@@ -11,7 +11,7 @@ export default function Cart({ cart, increaseQty, decreaseQty, setCart }){
   // ✅ CHECKOUT FUNCTION (API CALL)
   const handleCheckout = async () => {
   try {
-    await axios.post("http://localhost:8080/api/orders", {
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/orders`, {
       items: cart,
       total: total
     });
